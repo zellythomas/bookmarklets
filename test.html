@@ -83,4 +83,33 @@ javascript:window.location.href=window.location.href+'?f_si=%2C25062363544083343
   <b>Please note: at this time, it will open the link in your current tab. I am working on a version to open it in a new tab.</b>
     </td>
   </tr>
+
+  <tr>
+    <td width="300px" align="center">
+<p>
+
+<a href="javascript:">
+  <button>Open PID in New Tab v0.1
+  </button></a></br>
+  <code>
+  window.location='https://www.zazzle.com/' + prompt('Please Enter a PID:');
+  
+  var win = window.open('http://stackoverflow.com/', '_blank');
+if (win) {
+    //Browser has allowed it to be opened
+    win.focus();
+} else {
+    //Browser has blocked it
+    alert('Please allow popups for this website');
+}
+
+  $( 'a[href^="http://"]' ).attr( 'target','_blank' )
+    </code>
+
+  
+      </p>
+    </td>
+    <td width="700px">
+    </td>
+  </tr>
 </table>
