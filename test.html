@@ -20,21 +20,11 @@
  <a href="$('a[href^="http://"]' ).attr('target','_blank');javascript:window.location='https://www.zazzle.com/'+prompt('Please Enter a PID:');">
   <button>Open PID in New Tab v0.1
   </button></a></br>
-    
-  <code>
-  window.location='https://www.zazzle.com/' + prompt('Please Enter a PID:');
-  
-  var win = window.open('http://stackoverflow.com/', '_blank');
-if (win) {
-    //Browser has allowed it to be opened
-    win.focus();
-} else {
-    //Browser has blocked it
-    alert('Please allow popups for this website');
-}
 
-  $( 'a[href^="http://"]' ).attr( 'target','_blank' )
-    </code>
+<a href="javascript:var url = "https://www.zazzle.com/'+prompt('Please Enter a PID:')";window.open(url, '_blank');">
+  <button>v0.3</button>
+</a>< /br>
+    
 
   
       </p>
