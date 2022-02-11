@@ -69,11 +69,11 @@ javascript:window.location.href=window.location.href+'?f_si=%2C25062363544083343
 
     </td>
   </tr>
+  
   <tr>
     <td width="300px" align="center">
 <p>
-
-<a href="javascript:window.location='https://www.zazzle.com/' + prompt('Please Enter a PID:');">
+<a href="javascript:window.location='https://www.zazzle.com/' + prompt('Please Enter a PID OR any subpage. Omit the /.');">
 <button>Open PID
 </button></a>
       </p>
@@ -83,4 +83,25 @@ javascript:window.location.href=window.location.href+'?f_si=%2C25062363544083343
   <b>Please note: at this time, it will open the link in your current tab. I am working on a version to open it in a new tab.</b>
     </td>
   </tr>
+
+  <tr>
+    <td width="300px" align="center">
+<p>
+<a href="javascript:function openInNewTab(href) {
+  Object.assign(document.createElement('a'), {
+    target: '_blank',
+    href: href,
+  }).click();
+}
+openInNewTab('https://www.zazzle.com/'+prompt('Please Enter a PID OR any subpage. Omit the /.'));">
+  <button>Open PID in new tab</button>
+</a>
+        </p>
+    </td>
+    <td width="700px">
+      Click this link and a popup will let you enter a PID. It will then take you to that product page in a new tab.</br></br>
+  <b>Please note: this will likely trigger a popup blocker. Please enable popups for yourself if using this method.</b>
+    </td>
+  </tr>
+
 </table>
