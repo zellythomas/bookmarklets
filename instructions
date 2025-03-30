@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <style>
+        .gridTwo{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        textarea{
+            width: 100%;
+        }
+      </style>
+  </head>
+  <body>
+    <h1>SEO Helper - Step by Steps</h1>
+    <div class="gridTwo">
+
+        <div>
+            <h3>Input</h3>
+                      
+            <table>
+                <tbody>
+                    <tr>
+                        <th>
+                            <label for="typeSelect">Type:</label>
+                        </th>
+                        <td>
+                            <select id="typeSelect" onchange="setType(value)">
+                                <option value="blank">Enter your own values</option>
+                                <option value="test">Test</option>
+                            </select>                 </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="genreInput">Genre:</label>
+                        </th>
+                        <td>
+                            <input type="text" id="genreInput">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="productInput">Product:</label>
+                        </th>
+                        <td>
+                            <input type="text" id="productInput">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="optionsInput">Options:</label>
+                        </th>
+                        <td>
+                            <input type="text" id="optionsInput">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="getOutput" onclick="setOutput()">
+                Get Output
+            </button>
+             
+
+        </div>
+        <div>
+            <h3>Output</h3>
+            <div>
+                Test: <br>
+                <ul>
+                    <li id="genreOutput">Default</li>
+                    <li id="productOutput">Default</li>
+                    <li id="optionsOutput">Default</li>
+                    <li id="typeOutput">Default</li>
+                </ul>    
+                <label for="htmlOutput">Plain HTML Output:</label>
+                <textarea rows="5" id="htmlOutput"></textarea>     
+                <label for="schemaOutput">Schema-i-fied Output:</label>
+                <textarea rows="5" id="schemaOutput"></textarea>            
+       
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+    let genreOutput = document.getElementById("genreOutput");
+let productOutput = document.getElementById("productOutput");
+let optionsOutput = document.getElementById("optionsOutput");
+let htmlOutput = document.getElementById("htmlOutput");
+let typeOutput = document.getElementById("typeOutput");
+let genreInput = document.getElementById('genreInput');
+let productInput = document.getElementById('productInput');
+let optionsInput = document.getElementById('optionsInput');
+let genre = "Genre";
+let product = "Product";
+let options = "Options";
+
+// set default types
+window.testType = {
+    genre: "test genre",
+    product: "test product",
+    options: "test options"
+};
+
+window.blankType = {
+    genre: "",
+    product: "",
+    options: ""
+};
+
+//function for types
+function setType(typename){
+    let type = window[`${typename}Type`];
+    genreInput.value = type.genre;
+    productInput.value = type.product;
+    optionsInput.value = type.options;
+}
+
+
+
+//function for button
+function setOutput() {
+    genre = document.getElementById('genreInput').value;
+    genreOutput.innerHTML = genre;
+    product = document.getElementById('productInput').value;
+    productOutput.innerHTML = product;
+    options = document.getElementById('optionsInput').value;
+    optionsOutput.innerHTML = options;
+
+    // placeholder text
+    let stepOne = `
+    This is a test to get the genre: ${genre}
+    `;
+
+
+    // compile into html
+    htmlOutput.innerHTML = stepOne.trim();
+
+}
+    </script>
+
+  </body>
+  
+</html>
+
